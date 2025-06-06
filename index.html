@@ -10,20 +10,89 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
             <div class="container">
-                <div class="logo">
+                <div class="navbar-brand">
                     <h1>🐷 Hero Budget</h1>
                 </div>
-                <ul class="nav-links">
+                
+                <!-- Desktop Navigation -->
+                <ul class="navbar-nav desktop-nav">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#caracteristicas">Características</a></li>
                     <li><a href="soporte.html">Soporte</a></li>
                     <li><a href="privacidad.html">Privacidad</a></li>
                 </ul>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </nav>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <div class="sidebar-header">
+                <h2>🐷 Hero Budget</h2>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#inicio" class="sidebar-link">🏠 Inicio</a></li>
+                <li><a href="#caracteristicas" class="sidebar-link">⭐ Características</a></li>
+                <li><a href="soporte.html" class="sidebar-link">🛠️ Soporte</a></li>
+                <li><a href="privacidad.html" class="sidebar-link">🔒 Privacidad</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Backdrop -->
+        <div class="mobile-backdrop" id="mobile-backdrop"></div>
     </header>
+
+    <script>
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbar-toggle');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const mobileBackdrop = document.getElementById('mobile-backdrop');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            function openSidebar() {
+                mobileSidebar.classList.add('active');
+                mobileBackdrop.classList.add('active');
+                document.body.classList.add('sidebar-open');
+                navbarToggle.classList.add('active');
+            }
+
+            function closeSidebar() {
+                mobileSidebar.classList.remove('active');
+                mobileBackdrop.classList.remove('active');
+                document.body.classList.remove('sidebar-open');
+                navbarToggle.classList.remove('active');
+            }
+
+            navbarToggle.addEventListener('click', openSidebar);
+            sidebarClose.addEventListener('click', closeSidebar);
+            mobileBackdrop.addEventListener('click', closeSidebar);
+
+            // Close sidebar when clicking on links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+
+            // Close sidebar on escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
 
     <main>
         <section id="inicio" class="hero">
@@ -106,7 +175,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p>📧 soporte@herobudget.jaimedigitalstudio.com</p>
+                    <p>📧 jaimevillalcon@hotmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">

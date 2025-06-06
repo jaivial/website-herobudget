@@ -14,7 +14,7 @@ https://herobudget.jaimedigitalstudio.com
 
 📧 CONTACTO:
 -----------
-Email: soporte@herobudget.jaimedigitalstudio.com
+Email: jaimevillalcon@hotmail.com
 
 📝 TEXTOS PARA APP STORE CONNECT:
 ---------------------------------
@@ -53,6 +53,6 @@ COPYRIGHT:
 1. Despliega el sitio en tu VPS siguiendo DEPLOYMENT_GUIDE.md
 2. Verifica que las URLs funcionen correctamente
 3. Usa estas URLs en App Store Connect
-4. Configura el email de soporte o cambia las referencias
+4. El email jaimevillalcon@hotmail.com ya está configurado
 
 ¡Todo listo para App Store! 🎉 

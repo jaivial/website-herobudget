@@ -241,7 +241,7 @@ sudo certbot renew --force-renewal -d herobudget.jaimedigitalstudio.com
 
 ## 📞 Email de Contacto
 
-Recuerda configurar el email `soporte@herobudget.jaimedigitalstudio.com` o cambiar las referencias en las páginas web al email que prefieras usar.
+El email de contacto configurado es `jaimevillalcon@hotmail.com`. Si quieres cambiarlo en el futuro, busca y reemplaza todas las referencias en los archivos HTML.
 
 ## 🔄 Actualizaciones Futuras
 

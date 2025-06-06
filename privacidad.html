@@ -10,19 +10,87 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
             <div class="container">
-                <div class="logo">
+                <div class="navbar-brand">
                     <h1><a href="index.html">🐷 Hero Budget</a></h1>
                 </div>
-                <ul class="nav-links">
+                
+                <!-- Desktop Navigation -->
+                <ul class="navbar-nav desktop-nav">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="soporte.html">Soporte</a></li>
                     <li><a href="privacidad.html" class="active">Privacidad</a></li>
                 </ul>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </nav>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <div class="sidebar-header">
+                <h2><a href="index.html">🐷 Hero Budget</a></h2>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="index.html" class="sidebar-link">🏠 Inicio</a></li>
+                <li><a href="soporte.html" class="sidebar-link">🛠️ Soporte</a></li>
+                <li><a href="privacidad.html" class="sidebar-link active">🔒 Privacidad</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Backdrop -->
+        <div class="mobile-backdrop" id="mobile-backdrop"></div>
     </header>
+
+    <script>
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbar-toggle');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const mobileBackdrop = document.getElementById('mobile-backdrop');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            function openSidebar() {
+                mobileSidebar.classList.add('active');
+                mobileBackdrop.classList.add('active');
+                document.body.classList.add('sidebar-open');
+                navbarToggle.classList.add('active');
+            }
+
+            function closeSidebar() {
+                mobileSidebar.classList.remove('active');
+                mobileBackdrop.classList.remove('active');
+                document.body.classList.remove('sidebar-open');
+                navbarToggle.classList.remove('active');
+            }
+
+            navbarToggle.addEventListener('click', openSidebar);
+            sidebarClose.addEventListener('click', closeSidebar);
+            mobileBackdrop.addEventListener('click', closeSidebar);
+
+            // Close sidebar when clicking on links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+
+            // Close sidebar on escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
 
     <main class="legal-content">
         <div class="container">
@@ -101,7 +169,7 @@
                     <li><strong>Limitación:</strong> Restringir el procesamiento de tus datos</li>
                     <li><strong>Oposición:</strong> Oponerte al procesamiento de tus datos</li>
                 </ul>
-                <p>Para ejercer estos derechos, contacta: <strong>soporte@herobudget.jaimedigitalstudio.com</strong></p>
+                <p>Para ejercer estos derechos, contacta: <strong>jaimevillalcon@hotmail.com</strong></p>
             </section>
 
             <section>
@@ -123,7 +191,7 @@
                 <h2>10. Contacto</h2>
                 <p>Si tienes preguntas sobre esta Política de Privacidad, contacta con nosotros:</p>
                 <ul>
-                    <li><strong>Email:</strong> soporte@herobudget.jaimedigitalstudio.com</li>
+                    <li><strong>Email:</strong> jaimevillalcon@hotmail.com</li>
                     <li><strong>Dirección:</strong> Hero Budget App, Jaime Digital Studio</li>
                     <li><strong>Web:</strong> herobudget.jaimedigitalstudio.com</li>
                 </ul>
@@ -148,7 +216,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p>📧 soporte@herobudget.jaimedigitalstudio.com</p>
+                    <p>📧 jaimevillalcon@hotmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
