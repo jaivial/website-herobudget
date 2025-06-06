@@ -7,6 +7,7 @@
     <meta name="description" content="Centro de ayuda y soporte para Hero Budget. Encuentra respuestas a preguntas frecuentes y contacta con nuestro equipo.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script src="i18n.js"></script>
 </head>
 <body>
     <header>
@@ -18,10 +19,19 @@
                 
                 <!-- Desktop Navigation -->
                 <ul class="navbar-nav desktop-nav">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="soporte.html" class="active">Soporte</a></li>
-                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="soporte.html" class="active" data-i18n="nav.support">Soporte</a></li>
+                    <li><a href="privacidad.html" data-i18n="nav.privacy">Privacidad</a></li>
                 </ul>
+                
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <label data-i18n="lang.selector.label">Idioma</label>
+                    <select>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+                </div>
 
                 <!-- Mobile Navigation Toggle -->
                 <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
@@ -41,10 +51,21 @@
                 </button>
             </div>
             <ul class="sidebar-nav">
-                <li><a href="index.html" class="sidebar-link">🏠 Inicio</a></li>
-                <li><a href="soporte.html" class="sidebar-link active">🛠️ Soporte</a></li>
-                <li><a href="privacidad.html" class="sidebar-link">🔒 Privacidad</a></li>
+                <li><a href="index.html" class="sidebar-link">🏠 <span data-i18n="nav.home">Inicio</span></a></li>
+                <li><a href="soporte.html" class="sidebar-link active">🛠️ <span data-i18n="nav.support">Soporte</span></a></li>
+                <li><a href="privacidad.html" class="sidebar-link">🔒 <span data-i18n="nav.privacy">Privacidad</span></a></li>
             </ul>
+            
+            <!-- Mobile Language Selector -->
+            <div class="sidebar-language-selector">
+                <div class="language-selector">
+                    <label data-i18n="lang.selector.label">Idioma</label>
+                    <select>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <!-- Mobile Backdrop -->
@@ -94,68 +115,68 @@
 
     <main class="support-content">
         <div class="container">
-            <h1>Centro de Soporte</h1>
-            <p class="intro">¿Necesitas ayuda con Hero Budget? Aquí encontrarás respuestas a las preguntas más frecuentes y formas de contactar con nuestro equipo.</p>
+            <h1 data-i18n="support.title">Centro de Soporte</h1>
+            <p class="intro" data-i18n="support.intro">¿Necesitas ayuda con Hero Budget? Aquí encontrarás respuestas a las preguntas más frecuentes y formas de contactar con nuestro equipo.</p>
 
             <section class="faq-section">
-                <h2>Preguntas Frecuentes</h2>
+                <h2 data-i18n="support.faq.title">Preguntas Frecuentes</h2>
                 
                 <div class="faq-item">
-                    <h3>¿Cómo empiezo a usar Hero Budget?</h3>
-                    <p>Descarga la app desde App Store, crea tu cuenta y sigue el tutorial inicial. Podrás agregar tu primera transacción y configurar tus categorías de gasto en minutos.</p>
+                    <h3 data-i18n="support.faq.q1">¿Cómo empiezo a usar Hero Budget?</h3>
+                    <p data-i18n="support.faq.a1">Descarga la app desde App Store, crea tu cuenta y sigue el tutorial inicial. Podrás agregar tu primera transacción y configurar tus categorías de gasto en minutos.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>¿Es segura mi información financiera?</h3>
-                    <p>Absolutamente. Utilizamos encriptación de nivel bancario y tus datos se almacenan principalmente en tu dispositivo. Nunca vendemos o compartimos tu información personal.</p>
+                    <h3 data-i18n="support.faq.q2">¿Es segura mi información financiera?</h3>
+                    <p data-i18n="support.faq.a2">Absolutamente. Utilizamos encriptación de nivel bancario y tus datos se almacenan principalmente en tu dispositivo. Nunca vendemos o compartimos tu información personal.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>¿Puedo sincronizar entre dispositivos?</h3>
-                    <p>Sí, si creas una cuenta, tus datos se sincronizarán automáticamente entre todos tus dispositivos iOS de forma segura.</p>
+                    <h3 data-i18n="support.faq.q3">¿Puedo sincronizar entre dispositivos?</h3>
+                    <p data-i18n="support.faq.a3">Sí, si creas una cuenta, tus datos se sincronizarán automáticamente entre todos tus dispositivos iOS de forma segura.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>¿Cómo creo un presupuesto?</h3>
-                    <p>Ve a la sección "Presupuestos" en la app, toca "Nuevo Presupuesto", selecciona las categorías y establece los límites mensuales que desees.</p>
+                    <h3 data-i18n="support.faq.q4">¿Cómo creo un presupuesto?</h3>
+                    <p data-i18n="support.faq.a4">Ve a la sección "Presupuestos" en la app, toca "Nuevo Presupuesto", selecciona las categorías y establece los límites mensuales que desees.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>¿Puedo exportar mis datos?</h3>
-                    <p>Sí, Hero Budget permite exportar tus transacciones y reportes en formato CSV desde la sección "Configuración" > "Exportar Datos".</p>
+                    <h3 data-i18n="support.faq.q5">¿Puedo exportar mis datos?</h3>
+                    <p data-i18n="support.faq.a5">Sí, Hero Budget permite exportar tus transacciones y reportes en formato CSV desde la sección "Configuración" > "Exportar Datos".</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>¿La app funciona sin conexión?</h3>
-                    <p>Sí, puedes usar Hero Budget completamente sin conexión. Los datos se sincronizarán cuando tengas conexión a internet.</p>
+                    <h3 data-i18n="support.faq.q6">¿La app funciona sin conexión?</h3>
+                    <p data-i18n="support.faq.a6">Sí, puedes usar Hero Budget completamente sin conexión. Los datos se sincronizarán cuando tengas conexión a internet.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>¿Cómo elimino mi cuenta?</h3>
-                    <p>Ve a "Configuración" > "Cuenta" > "Eliminar Cuenta". Ten en cuenta que esta acción es irreversible y eliminará todos tus datos.</p>
+                    <h3 data-i18n="support.faq.q7">¿Cómo elimino mi cuenta?</h3>
+                    <p data-i18n="support.faq.a7">Ve a "Configuración" > "Cuenta" > "Eliminar Cuenta". Ten en cuenta que esta acción es irreversible y eliminará todos tus datos.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>¿Hero Budget es gratuita?</h3>
-                    <p>Sí, Hero Budget es completamente gratuita. Todas las funciones principales están disponibles sin costo alguno.</p>
+                    <h3 data-i18n="support.faq.q8">¿Hero Budget es gratuita?</h3>
+                    <p data-i18n="support.faq.a8">Sí, Hero Budget es completamente gratuita. Todas las funciones principales están disponibles sin costo alguno.</p>
                 </div>
             </section>
 
             <section class="contact-section">
-                <h2>¿No encuentras lo que buscas?</h2>
-                <p>Nuestro equipo de soporte está aquí para ayudarte. Responderemos tu consulta en un máximo de 24 horas.</p>
+                <h2 data-i18n="support.contact.title">¿No encuentras lo que buscas?</h2>
+                <p data-i18n="support.contact.desc">Nuestro equipo de soporte está aquí para ayudarte. Responderemos tu consulta en un máximo de 24 horas.</p>
                 
                 <div class="contact-methods">
                     <div class="contact-method">
-                        <h3>📧 Email</h3>
+                        <h3>📧 <span data-i18n="support.contact.email">Email</span></h3>
                         <p><strong>jaimevillalcon@hotmail.com</strong></p>
-                        <p>Respuesta en menos de 24 horas</p>
+                        <p data-i18n="support.contact.email.time">Respuesta en menos de 24 horas</p>
                     </div>
                     
                     <div class="contact-method">
-                        <h3>📱 Desde la App</h3>
-                        <p>Ve a "Configuración" > "Ayuda y Soporte"</p>
-                        <p>Envía feedback directamente desde la app</p>
+                        <h3>📱 <span data-i18n="support.contact.app">Desde la App</span></h3>
+                        <p data-i18n="support.contact.app.desc">Ve a "Configuración" > "Ayuda y Soporte"</p>
+                        <p data-i18n="support.contact.app.feedback">Envía feedback directamente desde la app</p>
                     </div>
                 </div>
             </section>

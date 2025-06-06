@@ -7,6 +7,7 @@
     <meta name="description" content="Política de Privacidad de Hero Budget. Conoce cómo protegemos y gestionamos tus datos personales.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script src="i18n.js"></script>
 </head>
 <body>
     <header>
@@ -18,10 +19,19 @@
                 
                 <!-- Desktop Navigation -->
                 <ul class="navbar-nav desktop-nav">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="soporte.html">Soporte</a></li>
-                    <li><a href="privacidad.html" class="active">Privacidad</a></li>
+                    <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="soporte.html" data-i18n="nav.support">Soporte</a></li>
+                    <li><a href="privacidad.html" class="active" data-i18n="nav.privacy">Privacidad</a></li>
                 </ul>
+                
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <label data-i18n="lang.selector.label">Idioma</label>
+                    <select>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+                </div>
 
                 <!-- Mobile Navigation Toggle -->
                 <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
@@ -41,10 +51,21 @@
                 </button>
             </div>
             <ul class="sidebar-nav">
-                <li><a href="index.html" class="sidebar-link">🏠 Inicio</a></li>
-                <li><a href="soporte.html" class="sidebar-link">🛠️ Soporte</a></li>
-                <li><a href="privacidad.html" class="sidebar-link active">🔒 Privacidad</a></li>
+                <li><a href="index.html" class="sidebar-link">🏠 <span data-i18n="nav.home">Inicio</span></a></li>
+                <li><a href="soporte.html" class="sidebar-link">🛠️ <span data-i18n="nav.support">Soporte</span></a></li>
+                <li><a href="privacidad.html" class="sidebar-link active">🔒 <span data-i18n="nav.privacy">Privacidad</span></a></li>
             </ul>
+            
+            <!-- Mobile Language Selector -->
+            <div class="sidebar-language-selector">
+                <div class="language-selector">
+                    <label data-i18n="lang.selector.label">Idioma</label>
+                    <select>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <!-- Mobile Backdrop -->
@@ -94,8 +115,8 @@
 
     <main class="legal-content">
         <div class="container">
-            <h1>Política de Privacidad</h1>
-            <p class="last-updated">Última actualización: 9 de enero de 2025</p>
+            <h1 data-i18n="privacy.title">Política de Privacidad</h1>
+            <p class="last-updated" data-i18n="privacy.updated">Última actualización: 9 de enero de 2025</p>
 
             <section>
                 <h2>1. Información General</h2>

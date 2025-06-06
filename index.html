@@ -7,6 +7,7 @@
     <meta name="description" content="Hero Budget - La app que te ayuda a controlar tus finanzas personales, crear presupuestos y alcanzar tus metas de ahorro.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script src="i18n.js"></script>
 </head>
 <body>
     <header>
@@ -18,11 +19,20 @@
                 
                 <!-- Desktop Navigation -->
                 <ul class="navbar-nav desktop-nav">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#caracteristicas">Características</a></li>
-                    <li><a href="soporte.html">Soporte</a></li>
-                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="#caracteristicas" data-i18n="nav.features">Características</a></li>
+                    <li><a href="soporte.html" data-i18n="nav.support">Soporte</a></li>
+                    <li><a href="privacidad.html" data-i18n="nav.privacy">Privacidad</a></li>
                 </ul>
+                
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <label data-i18n="lang.selector.label">Idioma</label>
+                    <select>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+                </div>
 
                 <!-- Mobile Navigation Toggle -->
                 <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
@@ -42,16 +52,46 @@
                 </button>
             </div>
             <ul class="sidebar-nav">
-                <li><a href="#inicio" class="sidebar-link">🏠 Inicio</a></li>
-                <li><a href="#caracteristicas" class="sidebar-link">⭐ Características</a></li>
-                <li><a href="soporte.html" class="sidebar-link">🛠️ Soporte</a></li>
-                <li><a href="privacidad.html" class="sidebar-link">🔒 Privacidad</a></li>
+                <li><a href="#inicio" class="sidebar-link">🏠 <span data-i18n="nav.home">Inicio</span></a></li>
+                <li><a href="#caracteristicas" class="sidebar-link">⭐ <span data-i18n="nav.features">Características</span></a></li>
+                <li><a href="soporte.html" class="sidebar-link">🛠️ <span data-i18n="nav.support">Soporte</span></a></li>
+                <li><a href="privacidad.html" class="sidebar-link">🔒 <span data-i18n="nav.privacy">Privacidad</span></a></li>
             </ul>
+            
+            <!-- Mobile Language Selector -->
+            <div class="sidebar-language-selector">
+                <div class="language-selector">
+                    <label data-i18n="lang.selector.label">Idioma</label>
+                    <select>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <!-- Mobile Backdrop -->
         <div class="mobile-backdrop" id="mobile-backdrop"></div>
     </header>
+
+    <!-- Language Selection Modal -->
+    <div id="language-modal" class="language-modal">
+        <div class="language-modal-content">
+            <h2 data-i18n="modal.title">Selecciona tu idioma</h2>
+            <p class="subtitle" data-i18n="modal.subtitle">Choose your language</p>
+            
+            <div class="language-options">
+                <button class="language-option" data-lang="es">
+                    <span class="language-flag">🇪🇸</span>
+                    <span>Español</span>
+                </button>
+                <button class="language-option" data-lang="en">
+                    <span class="language-flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Mobile navigation functionality
@@ -98,11 +138,11 @@
         <section id="inicio" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>Toma Control de tus Finanzas</h2>
-                    <p>Hero Budget es la app que necesitas para gestionar tus gastos, crear presupuestos inteligentes y alcanzar tus metas de ahorro.</p>
+                    <h2 data-i18n="hero.title">Toma Control de tus Finanzas</h2>
+                    <p data-i18n="hero.description">Hero Budget es la app que necesitas para gestionar tus gastos, crear presupuestos inteligentes y alcanzar tus metas de ahorro.</p>
                     <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary">Descargar en App Store</a>
-                        <a href="#caracteristicas" class="btn btn-secondary">Conocer más</a>
+                        <a href="#" class="btn btn-primary" data-i18n="hero.download">Descargar en App Store</a>
+                        <a href="#caracteristicas" class="btn btn-secondary" data-i18n="hero.learn-more">Conocer más</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -113,37 +153,37 @@
 
         <section id="caracteristicas" class="features">
             <div class="container">
-                <h2>¿Por qué elegir Hero Budget?</h2>
+                <h2 data-i18n="features.title">¿Por qué elegir Hero Budget?</h2>
                 <div class="features-grid">
                     <div class="feature">
                         <div class="feature-icon">📊</div>
-                        <h3>Seguimiento de Gastos</h3>
-                        <p>Registra y categoriza tus gastos de forma automática para entender mejor tus hábitos financieros.</p>
+                        <h3 data-i18n="features.expense-tracking.title">Seguimiento de Gastos</h3>
+                        <p data-i18n="features.expense-tracking.desc">Registra y categoriza tus gastos de forma automática para entender mejor tus hábitos financieros.</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">🎯</div>
-                        <h3>Metas de Ahorro</h3>
-                        <p>Establece objetivos de ahorro realistas y recibe notificaciones para mantener tu progreso.</p>
+                        <h3 data-i18n="features.savings-goals.title">Metas de Ahorro</h3>
+                        <p data-i18n="features.savings-goals.desc">Establece objetivos de ahorro realistas y recibe notificaciones para mantener tu progreso.</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">💡</div>
-                        <h3>Presupuestos Inteligentes</h3>
-                        <p>Crea presupuestos mensuales personalizados que se adapten a tu estilo de vida.</p>
+                        <h3 data-i18n="features.smart-budgets.title">Presupuestos Inteligentes</h3>
+                        <p data-i18n="features.smart-budgets.desc">Crea presupuestos mensuales personalizados que se adapten a tu estilo de vida.</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">🔒</div>
-                        <h3>Datos Seguros</h3>
-                        <p>Tu información financiera está protegida con encriptación de nivel bancario.</p>
+                        <h3 data-i18n="features.secure-data.title">Datos Seguros</h3>
+                        <p data-i18n="features.secure-data.desc">Tu información financiera está protegida con encriptación de nivel bancario.</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">📱</div>
-                        <h3>Interfaz Intuitiva</h3>
-                        <p>Diseño simple y elegante que hace que gestionar dinero sea fácil y agradable.</p>
+                        <h3 data-i18n="features.intuitive-ui.title">Interfaz Intuitiva</h3>
+                        <p data-i18n="features.intuitive-ui.desc">Diseño simple y elegante que hace que gestionar dinero sea fácil y agradable.</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">📈</div>
-                        <h3>Reportes Visuales</h3>
-                        <p>Gráficos claros que muestran tu progreso financiero de un vistazo.</p>
+                        <h3 data-i18n="features.visual-reports.title">Reportes Visuales</h3>
+                        <p data-i18n="features.visual-reports.desc">Gráficos claros que muestran tu progreso financiero de un vistazo.</p>
                     </div>
                 </div>
             </div>
@@ -151,9 +191,9 @@
 
         <section class="cta-section">
             <div class="container">
-                <h2>¿Listo para ser el héroe de tus finanzas?</h2>
-                <p>Únete a miles de usuarios que ya transformaron su relación con el dinero.</p>
-                <a href="#" class="btn btn-primary">Descargar Hero Budget</a>
+                <h2 data-i18n="cta.title">¿Listo para ser el héroe de tus finanzas?</h2>
+                <p data-i18n="cta.description">Únete a miles de usuarios que ya transformaron su relación con el dinero.</p>
+                <a href="#" class="btn btn-primary" data-i18n="cta.download">Descargar Hero Budget</a>
             </div>
         </section>
     </main>
@@ -163,23 +203,23 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Hero Budget</h3>
-                    <p>Tu compañero para la libertad financiera.</p>
+                    <p data-i18n="footer.tagline">Tu compañero para la libertad financiera.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Enlaces</h4>
+                    <h4 data-i18n="footer.links">Enlaces</h4>
                     <ul>
-                        <li><a href="soporte.html">Soporte</a></li>
-                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="soporte.html" data-i18n="nav.support">Soporte</a></li>
+                        <li><a href="privacidad.html" data-i18n="nav.privacy">Política de Privacidad</a></li>
                         <li><a href="terminos.html">Términos de Uso</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="footer.contact">Contacto</h4>
                     <p>📧 jaimevillalcon@hotmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Hero Budget App. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Hero Budget App. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
             </div>
         </div>
     </footer>

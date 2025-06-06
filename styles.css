@@ -699,4 +699,182 @@ footer {
     .support-content .container {
         padding: 0 15px;
     }
+}
+
+/* Language Modal Styles */
+.language-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+}
+
+.language-modal-content {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.language-modal h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.language-modal .subtitle {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.language-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.language-option {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 60px;
+}
+
+.language-option:hover {
+    border-color: var(--primary-color);
+    background: rgba(233, 30, 99, 0.05);
+    transform: translateY(-2px);
+}
+
+.language-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(233, 30, 99, 0.1);
+    color: var(--primary-color);
+}
+
+.language-flag {
+    font-size: 1.5rem;
+}
+
+/* Language Selector in Navigation */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.language-selector label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.language-selector select {
+    background: var(--white);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.language-selector select:hover,
+.language-selector select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+/* Mobile language selector in sidebar */
+.sidebar-language-selector {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.sidebar-language-selector .language-selector {
+    margin-left: 0;
+    justify-content: space-between;
+}
+
+.sidebar-language-selector label {
+    font-size: 0.9rem;
+}
+
+.sidebar-language-selector select {
+    flex: 1;
+    margin-left: 1rem;
+}
+
+/* Body modal state */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Language Modal Responsive */
+@media (max-width: 768px) {
+    .desktop-nav .language-selector {
+        display: none;
+    }
+    
+    .language-modal-content {
+        padding: 1.5rem;
+    }
+    
+    .language-options {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .language-option {
+        padding: 0.75rem;
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-modal-content {
+        padding: 1.25rem;
+        margin: 1rem;
+    }
+    
+    .language-modal h2 {
+        font-size: 1.5rem;
+    }
 } 
