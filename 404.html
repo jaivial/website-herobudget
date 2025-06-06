@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada - Hero Budget</title>
+    <meta name="description" content="La página que buscas no existe - Hero Budget">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .error-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .error-content {
+            max-width: 600px;
+        }
+
+        .error-icon {
+            font-size: 8rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .error-number {
+            font-size: 6rem;
+            font-weight: 700;
+            color: #e91e63;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, #e91e63, #f06292);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .error-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-icon {
+                font-size: 6rem;
+            }
+            
+            .error-number {
+                font-size: 4rem;
+            }
+
+            .error-title {
+                font-size: 2rem;
+            }
+
+            .error-description {
+                font-size: 1.1rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <h1>🐷 Hero Budget</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="navbar-nav desktop-nav">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas">Características</a></li>
+                    <li><a href="soporte.html">Soporte</a></li>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                </ul>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <div class="sidebar-header">
+                <h2>🐷 Hero Budget</h2>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="index.html" class="sidebar-link">🏠 Inicio</a></li>
+                <li><a href="index.html#caracteristicas" class="sidebar-link">⭐ Características</a></li>
+                <li><a href="soporte.html" class="sidebar-link">🛠️ Soporte</a></li>
+                <li><a href="privacidad.html" class="sidebar-link">🔒 Privacidad</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Backdrop -->
+        <div class="mobile-backdrop" id="mobile-backdrop"></div>
+    </header>
+
+    <main>
+        <section class="error-section">
+            <div class="container">
+                <div class="error-content">
+                    <div class="error-icon">🐷</div>
+                    <div class="error-number">404</div>
+                    <h2 class="error-title">Página no encontrada</h2>
+                    <p class="error-description">Lo sentimos, la página que buscas no existe o ha sido movida a otra ubicación.</p>
+                    <div class="error-actions">
+                        <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+                        <a href="soporte.html" class="btn btn-secondary">Contactar soporte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hero Budget</h3>
+                    <p>Tu compañero para la libertad financiera.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="soporte.html">Soporte</a></li>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="terminos.html">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📧 jaimevillalcon@hotmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hero Budget App. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbar-toggle');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const mobileBackdrop = document.getElementById('mobile-backdrop');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            function openSidebar() {
+                mobileSidebar.classList.add('active');
+                mobileBackdrop.classList.add('active');
+                document.body.classList.add('sidebar-open');
+                navbarToggle.classList.add('active');
+            }
+
+            function closeSidebar() {
+                mobileSidebar.classList.remove('active');
+                mobileBackdrop.classList.remove('active');
+                document.body.classList.remove('sidebar-open');
+                navbarToggle.classList.remove('active');
+            }
+
+            navbarToggle.addEventListener('click', openSidebar);
+            sidebarClose.addEventListener('click', closeSidebar);
+            mobileBackdrop.addEventListener('click', closeSidebar);
+
+            // Close sidebar when clicking on links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+
+            // Close sidebar on escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+        });
+
+        // Efecto de parpadeo suave para el número 404
+        const errorNumber = document.querySelector('.error-number');
+        if (errorNumber) {
+            setInterval(() => {
+                errorNumber.style.textShadow = '0 0 20px rgba(233, 30, 99, 0.8)';
+                setTimeout(() => {
+                    errorNumber.style.textShadow = '0 4px 8px rgba(233, 30, 99, 0.3)';
+                }, 1000);
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

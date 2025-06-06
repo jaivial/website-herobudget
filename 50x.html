@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error del servidor - Hero Budget</title>
+    <meta name="description" content="Error temporal del servidor - Hero Budget">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .error-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .error-content {
+            max-width: 650px;
+        }
+
+        .error-icon {
+            font-size: 8rem;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid #ff9800;
+            border-radius: 20px;
+            color: #f57c00;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .status-indicator::before {
+            content: '⚠️';
+            margin-right: 8px;
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .error-subtitle {
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff9800, #ffb74d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .error-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .system-status {
+            background: rgba(255, 152, 0, 0.05);
+            border: 2px solid rgba(255, 152, 0, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 2rem auto;
+            max-width: 400px;
+        }
+
+        .system-status h3 {
+            color: #ff9800;
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .system-status p {
+            color: #666;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-icon {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 2rem;
+            }
+
+            .error-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .error-description {
+                font-size: 1.1rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+            }
+
+            .system-status {
+                margin: 1.5rem auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <h1>🐷 Hero Budget</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="navbar-nav desktop-nav">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas">Características</a></li>
+                    <li><a href="soporte.html">Soporte</a></li>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                </ul>
+
+                <!-- Mobile Navigation Toggle -->
+                <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <div class="sidebar-header">
+                <h2>🐷 Hero Budget</h2>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="index.html" class="sidebar-link">🏠 Inicio</a></li>
+                <li><a href="index.html#caracteristicas" class="sidebar-link">⭐ Características</a></li>
+                <li><a href="soporte.html" class="sidebar-link">🛠️ Soporte</a></li>
+                <li><a href="privacidad.html" class="sidebar-link">🔒 Privacidad</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Backdrop -->
+        <div class="mobile-backdrop" id="mobile-backdrop"></div>
+    </header>
+
+    <main>
+        <section class="error-section">
+            <div class="container">
+                <div class="error-content">
+                    <div class="error-icon">🐷</div>
+                    <div class="status-indicator">Mantenimiento temporal</div>
+                    <h1 class="error-title">¡Ups!</h1>
+                    <h2 class="error-subtitle">Error del servidor</h2>
+                    <p class="error-description">Estamos experimentando problemas técnicos temporales. Nuestro equipo está trabajando para solucionarlo lo antes posible.</p>
+                    
+                    <div class="system-status">
+                        <h3>Estado del sistema</h3>
+                        <p>Tiempo estimado de resolución: <strong>5-10 minutos</strong></p>
+                    </div>
+
+                    <div class="error-actions">
+                        <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+                        <a href="soporte.html" class="btn btn-secondary">Reportar problema</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hero Budget</h3>
+                    <p>Tu compañero para la libertad financiera.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="soporte.html">Soporte</a></li>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="terminos.html">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📧 jaimevillalcon@hotmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hero Budget App. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbar-toggle');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const mobileBackdrop = document.getElementById('mobile-backdrop');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            function openSidebar() {
+                mobileSidebar.classList.add('active');
+                mobileBackdrop.classList.add('active');
+                document.body.classList.add('sidebar-open');
+                navbarToggle.classList.add('active');
+            }
+
+            function closeSidebar() {
+                mobileSidebar.classList.remove('active');
+                mobileBackdrop.classList.remove('active');
+                document.body.classList.remove('sidebar-open');
+                navbarToggle.classList.remove('active');
+            }
+
+            navbarToggle.addEventListener('click', openSidebar);
+            sidebarClose.addEventListener('click', closeSidebar);
+            mobileBackdrop.addEventListener('click', closeSidebar);
+
+            // Close sidebar when clicking on links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+
+            // Close sidebar on escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+        });
+
+        // Auto refresh con confirmación mejorada
+        let countdown = 60; // 60 segundos
+
+        function startCountdown() {
+            const countdownElement = document.createElement('div');
+            countdownElement.id = 'refresh-countdown';
+            countdownElement.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: rgba(255, 152, 0, 0.9);
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            `;
+            document.body.appendChild(countdownElement);
+
+            const interval = setInterval(() => {
+                countdownElement.textContent = `Recarga automática en ${countdown}s`;
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(interval);
+                    countdownElement.remove();
+                    window.location.reload();
+                }
+            }, 1000);
+
+            // Permitir cancelar el refresh
+            countdownElement.addEventListener('click', () => {
+                clearInterval(interval);
+                countdownElement.remove();
+            });
+        }
+
+        // Iniciar countdown después de 30 segundos
+        setTimeout(startCountdown, 30000);
+
+        // Efecto de pulso para el estado del servidor
+        const statusIndicator = document.querySelector('.status-indicator');
+        if (statusIndicator) {
+            setInterval(() => {
+                statusIndicator.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    statusIndicator.style.transform = 'scale(1)';
+                }, 500);
+            }, 2000);
+        }
+    </script>
+</body>
+</html> 
