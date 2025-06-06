@@ -3,14 +3,29 @@
 
 📋 URLS PRINCIPALES:
 -------------------
-✅ URL de Política de Privacidad:
-https://herobudget.jaimedigitalstudio.com/privacidad
+✅ URL de Política de Privacidad (Español):
+https://herobudget.jaimedigitalstudio.com/privacidad.html?lang=es
 
-✅ URL de Soporte:
-https://herobudget.jaimedigitalstudio.com/soporte
+✅ URL de Política de Privacidad (English):
+https://herobudget.jaimedigitalstudio.com/privacidad.html?lang=en
 
-✅ URL de Marketing (opcional):
-https://herobudget.jaimedigitalstudio.com
+✅ URL de Soporte (Español):
+https://herobudget.jaimedigitalstudio.com/soporte.html?lang=es
+
+✅ URL de Soporte (English):
+https://herobudget.jaimedigitalstudio.com/soporte.html?lang=en
+
+✅ URL de Marketing (Español):
+https://herobudget.jaimedigitalstudio.com/?lang=es
+
+✅ URL de Marketing (English):
+https://herobudget.jaimedigitalstudio.com/?lang=en
+
+🌐 URLS GENÉRICAS (auto-detectan idioma):
+---------------------------------------
+✅ Política de Privacidad: https://herobudget.jaimedigitalstudio.com/privacidad.html
+✅ Soporte: https://herobudget.jaimedigitalstudio.com/soporte.html
+✅ Página Principal: https://herobudget.jaimedigitalstudio.com
 
 📧 CONTACTO:
 -----------
@@ -52,7 +67,21 @@ COPYRIGHT:
 -------------------------
 1. Despliega el sitio en tu VPS siguiendo DEPLOYMENT_GUIDE.md
 2. Verifica que las URLs funcionen correctamente
-3. Usa estas URLs en App Store Connect
-4. El email jaimevillalcon@hotmail.com ya está configurado
+3. Usa las URLs CON PARÁMETROS ?lang= en App Store Connect para idiomas específicos
+4. Para App Store Connect usa:
+   - Español: https://herobudget.jaimedigitalstudio.com/privacidad.html?lang=es
+   - English: https://herobudget.jaimedigitalstudio.com/privacidad.html?lang=en
+5. El email jaimevillalcon@hotmail.com ya está configurado
+
+📱 PARA APP STORE CONNECT:
+-------------------------
+• Cuando App Store Connect pida "URL de política de privacidad para Español (España)", 
+  usa: https://herobudget.jaimedigitalstudio.com/privacidad.html?lang=es
+
+• Cuando pida "URL de política de privacidad para English (United States)", 
+  usa: https://herobudget.jaimedigitalstudio.com/privacidad.html?lang=en
+
+• El sistema detectará automáticamente el parámetro ?lang= y mostrará el contenido 
+  en el idioma correcto SIN mostrar el modal de selección de idioma.
 
 ¡Todo listo para App Store! 🎉 

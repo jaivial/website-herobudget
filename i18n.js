@@ -172,14 +172,28 @@ const translations = {
 // Language management functions
 class LanguageManager {
     constructor() {
-        this.currentLanguage = this.getStoredLanguage() || 'es';
+        this.currentLanguage = this.getLanguageFromURL() || this.getStoredLanguage() || 'es';
         this.init();
     }
 
     init() {
-        this.checkAndShowLanguageModal();
-        this.applyLanguage(this.currentLanguage);
-        this.setupLanguageSelectors();
+        // If language came from URL, save it and don't show modal
+        const urlLang = this.getLanguageFromURL();
+        if (urlLang) {
+            this.setStoredLanguage(urlLang);
+            this.applyLanguage(urlLang);
+            this.setupLanguageSelectors();
+        } else {
+            this.checkAndShowLanguageModal();
+            this.applyLanguage(this.currentLanguage);
+            this.setupLanguageSelectors();
+        }
+    }
+
+    getLanguageFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        return langParam && translations[langParam] ? langParam : null;
     }
 
     getStoredLanguage() {
@@ -222,6 +236,20 @@ class LanguageManager {
 
             // Update HTML lang attribute
             document.documentElement.lang = lang;
+
+            // Update URL parameter if not already present
+            this.updateURLParameter(lang);
+        }
+    }
+
+    updateURLParameter(lang) {
+        const url = new URL(window.location);
+        const currentLangParam = url.searchParams.get('lang');
+
+        if (currentLangParam !== lang) {
+            url.searchParams.set('lang', lang);
+            // Update URL without reloading the page
+            window.history.replaceState({}, '', url);
         }
     }
 
