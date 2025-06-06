@@ -1,0 +1,58 @@
+🌐 URLs PARA APP STORE CONNECT - HERO BUDGET
+==============================================
+
+📋 URLS PRINCIPALES:
+-------------------
+✅ URL de Política de Privacidad:
+https://herobudget.jaimedigitalstudio.com/privacidad
+
+✅ URL de Soporte:
+https://herobudget.jaimedigitalstudio.com/soporte
+
+✅ URL de Marketing (opcional):
+https://herobudget.jaimedigitalstudio.com
+
+📧 CONTACTO:
+-----------
+Email: soporte@herobudget.jaimedigitalstudio.com
+
+📝 TEXTOS PARA APP STORE CONNECT:
+---------------------------------
+
+TEXTO PROMOCIONAL (170 caracteres máx.):
+Controla tus finanzas con Hero Budget. Gestiona gastos, ahorra y alcanza tus metas financieras de forma simple.
+
+DESCRIPCIÓN (versión corta):
+Hero Budget te ayuda a tomar control de tus finanzas personales de forma simple y efectiva.
+
+CARACTERÍSTICAS:
+• Seguimiento de gastos diarios
+• Metas de ahorro personalizables  
+• Presupuestos mensuales inteligentes
+• Reportes visuales claros
+• Categorías personalizables
+• Recordatorios de pagos
+
+IDEAL PARA:
+- Familias que buscan optimizar su presupuesto
+- Jóvenes que inician su independencia financiera
+- Personas que quieren ahorrar para objetivos específicos
+
+Tu privacidad es nuestra prioridad. Los datos se procesan localmente en tu dispositivo.
+
+¿Listo para ser el héroe de tus finanzas?
+
+PALABRAS CLAVE:
+presupuesto,finanzas,ahorro,gastos,dinero,economia,metas,control,personal,familiar
+
+COPYRIGHT:
+2025 Hero Budget App
+
+🚀 DESPUÉS DEL DESPLIEGUE:
+-------------------------
+1. Despliega el sitio en tu VPS siguiendo DEPLOYMENT_GUIDE.md
+2. Verifica que las URLs funcionen correctamente
+3. Usa estas URLs en App Store Connect
+4. Configura el email de soporte o cambia las referencias
+
+¡Todo listo para App Store! 🎉 
