@@ -1,0 +1,137 @@
+/**
+ * Hero Budget Website - CSS Reveal Animations
+ * 
+ * Animaciones CSS puras para elementos de revelado sin dependencia de JavaScript
+ * Proporciona fallbacks seguros y efectos visuales suaves
+ */
+
+/* Estilos base para elementos de revelado */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-element.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variantes de dirección de revelado */
+[data-reveal="up"] {
+    transform: translateY(50px);
+}
+
+[data-reveal="up"].revealed {
+    transform: translateY(0);
+}
+
+[data-reveal="down"] {
+    transform: translateY(-50px);
+}
+
+[data-reveal="down"].revealed {
+    transform: translateY(0);
+}
+
+[data-reveal="left"] {
+    transform: translateX(-50px);
+}
+
+[data-reveal="left"].revealed {
+    transform: translateX(0);
+}
+
+[data-reveal="right"] {
+    transform: translateX(50px);
+}
+
+[data-reveal="right"].revealed {
+    transform: translateX(0);
+}
+
+[data-reveal="scale"] {
+    transform: scale(0.8);
+}
+
+[data-reveal="scale"].revealed {
+    transform: scale(1);
+}
+
+/* Animaciones CSS para cuando GSAP no está disponible */
+.css-animations .feature {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.css-animations .feature:nth-child(1) { animation-delay: 0.1s; }
+.css-animations .feature:nth-child(2) { animation-delay: 0.2s; }
+.css-animations .feature:nth-child(3) { animation-delay: 0.3s; }
+.css-animations .feature:nth-child(4) { animation-delay: 0.4s; }
+.css-animations .feature:nth-child(5) { animation-delay: 0.5s; }
+.css-animations .feature:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animaciones simples para móviles */
+.simple-animations * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+}
+
+.simple-animations .floating-elements,
+.simple-animations [data-parallax],
+.simple-animations .liquid-bubble {
+    display: none !important;
+}
+
+/* Header con efectos CSS */
+header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* Efectos hover seguros */
+.feature:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Optimizaciones para dispositivos de bajo rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-elements,
+    [data-parallax] {
+        display: none !important;
+    }
+}
+
+/* Reducir movimiento en móviles */
+.reduce-motion * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+}
+
+.reduce-motion .floating-elements,
+.reduce-motion .liquid-bubble,
+.reduce-motion [data-parallax] {
+    display: none !important;
+}
